@@ -58,10 +58,10 @@ public class LoginForm extends AppCompatActivity {
             mIntent.putExtra("id", 100);
 
             startActivity(mIntent);
-            //finish();
+            finish();
         }
 
-        //Toast.makeText(getApplicationContext(),userName + " : " +  password,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),userName + " : " +  password,Toast.LENGTH_SHORT).show();
 
     }
 }
