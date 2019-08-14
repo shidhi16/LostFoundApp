@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">Lost&amp;FoundApp</string>
+    <string name="app_name">LostFoundApp</string>
+    <string name="status_prompt">Status</string>
+
+
+    <string name="Login">Login</string>
+    <string name="Email">Email ID</string>
+    <string name="Password">Password</string>
+    <string name="EnterEmail">Please Enter valid Email ID</string>
+    <string name="EnterPassword">Please Enter correct Password</string>
+    <string name="enterCredentials">Kindly enter correct credentials</string>
+    <string name="dismiss" />
+
+
+    <string-array name="statusList">
+        <item>Lost</item>
+        <item>Found</item>
+
+    </string-array>
 </resources>
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    android:id="@+id/cardItem">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation= "vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewImg"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:elevation="5dp"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="5dp">
+
+            <ImageView
+                android:id="@+id/img_view"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/cardviewImg">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/status"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_black_1000"
+                android:hint="status"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/itemName"
+                android:textSize="18sp"
+                android:text="Item Name"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

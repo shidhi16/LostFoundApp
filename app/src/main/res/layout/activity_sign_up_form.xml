@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFAFA"
-    tools:context=".SignUpForm">
+    tools:context=".Activities.Activities.SignUpForm">
 
 
     <EditText

@@ -1,27 +1,37 @@
-public class Item
-{
-    private int imageID;
-    private int itemID;
-    private String itemName;
-    private String description;
-    private String status;
-    private String location;
+package com.example.lostfoundapp.Activities.Activities;
 
-    public Item(int imageID, int itemID, String itemName, String description, String status, String location) {
-        this.imageID = imageID;
+import java.io.Serializable;
+
+public class Item implements Serializable
+{
+    public String itemImage;
+    public int itemID;
+    public String itemName;
+    public String description;
+    public String status;
+    public String location;
+    public String contact;
+
+
+      public Item(){}
+
+
+    public Item(String itemImage,int itemID, String itemName, String description, String status, String location, String contact) {
+        this.itemImage = itemImage;
         this.itemID = itemID;
         this.itemName = itemName;
         this.description = description;
         this.status = status;
         this.location = location;
+        this.contact = contact;
     }
 
-    public int getImageID() {
-        return imageID;
+    public String getItemImage() {
+        return itemImage;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setItemImage(String itemImage) {
+        this.itemImage = itemImage;
     }
 
     public int getItemID() {
@@ -62,5 +72,14 @@ public class Item
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }

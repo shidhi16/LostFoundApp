@@ -1,0 +1,171 @@
+[
+{
+"itemID": 1,
+"itemName": "Gucci Bag",
+"description": "Black coloured Gucci Bag. With Golden badge over it.",
+"status": "Lost",
+"location": "Candidplatz Station — Munich, Germany",
+"contact": +4376458790
+},
+
+{
+"itemID": 2,
+"itemName": "Fossil Watch",
+"description": "Fossil Women's Georgia Quartz Stainless Steel and Leather Casual Watch",
+"status": "Lost",
+"location": "City Hall Station — New York City, U.S.",
+"contact": +4376458790
+},
+
+{
+"itemID": 3,
+"itemName": "Umbrella",
+"description": " blue colored umbrella",
+"status": "Found",
+"location": "Vaughan Mills - Food Court",
+"contact": +14562309653
+},
+{
+"itemID": 4,
+"itemName": "Car Repair Tool Kit",
+"description": "Red coloured Car repair Tool Kit",
+"status": "Found",
+"location": "Four Seasons Site Development, Brampton",
+"contact": +7320986524
+},
+{
+"itemID": 5,
+"itemName": "Kids Crocs",
+"description": "Navy Blue colored Crocs",
+"status": "Lost",
+"location": "Centreville Amusement Park",
+"contact": +1998738475
+},
+{
+"itemID": 6,
+"itemName": "Gucci Bag",
+"description": "Black coloured Gucci Bag. With Golden badge over it.",
+"status": "Lost",
+"location": "Candidplatz Station — Munich, Germany",
+"contact": +2345876500
+},
+
+{
+"itemID": 7,
+"itemName": "Fossil Watch",
+"description": "Fossil Women's Georgia Quartz Stainless Steel and Leather Casual Watch",
+"status": "Lost",
+"location": "City Hall Station — New York City, U.S.",
+"contact": +4376458790
+},
+
+{
+"itemID": 8,
+"itemName": "Umbrella",
+"description": " blue colored umbrella",
+"status": "Found",
+"location": "Vaughan Mills - Food Court",
+"contact": +14562309653
+},
+{
+"itemID": 9,
+"itemName": "Car Repair Tool Kit",
+"description": "Red coloured Car repair Tool Kit",
+"status": "Found",
+"location": "Four Seasons Site Development, Brampton",
+"contact": +7320986524
+},
+{
+"itemID": 10,
+"itemName": "Kids Crocs",
+"description": "Navy Blue colored Crocs",
+"status": "Lost",
+"location": "Centreville Amusement Park",
+"contact": +1998738475
+},
+{
+"itemID": 11,
+"itemName": "Gucci Bag",
+"description": "Black coloured Gucci Bag. With Golden badge over it.",
+"status": "Lost",
+"location": "Candidplatz Station — Munich, Germany",
+"contact": +7320986524
+
+},
+
+{
+"itemID": 12,
+"itemName": "Fossil Watch",
+"description": "Fossil Women's Georgia Quartz Stainless Steel and Leather Casual Watch",
+"status": "Lost",
+"location": "City Hall Station — New York City, U.S.",
+"contact": +4376458790
+},
+
+{
+"itemID": 13,
+"itemName": "Umbrella",
+"description": " blue colored umbrella",
+"status": "Found",
+"location": "Vaughan Mills - Food Court",
+"contact": +14562309653
+},
+{
+"itemID": 14,
+"itemName": "Car Repair Tool Kit",
+"description": "Red coloured Car repair Tool Kit",
+"status": "Found",
+"location": "Four Seasons Site Development, Brampton",
+"contact": +7320986524
+},
+{
+"itemID": 15,
+"itemName": "Kids Crocs",
+"description": "Navy Blue colored Crocs",
+"status": "Lost",
+"location": "Centreville Amusement Park",
+"contact": +1998738475
+},
+{
+"itemID": 16,
+"itemName": "Gucci Bag",
+"description": "Black coloured Gucci Bag. With Golden badge over it.",
+"status": "Lost",
+"location": "Candidplatz Station — Munich, Germany",
+"contact": +7320986524
+},
+
+{
+"itemID": 17,
+"itemName": "Fossil Watch",
+"description": "Fossil Women's Georgia Quartz Stainless Steel and Leather Casual Watch",
+"status": "Lost",
+"location": "City Hall Station — New York City, U.S.",
+"contact": +4376458790
+},
+
+{
+"itemID": 18,
+"itemName": "Umbrella",
+"description": " blue colored umbrella",
+"status": "Found",
+"location": "Vaughan Mills - Food Court",
+"contact": +14562309653
+},
+{
+"itemID": 19,
+"itemName": "Car Repair Tool Kit",
+"description": "Red coloured Car repair Tool Kit",
+"status": "Found",
+"location": "Four Seasons Site Development, Brampton",
+"contact": +7320986524
+},
+{
+"itemID": 20,
+"itemName": "Kids Crocs",
+"description": "Navy Blue colored Crocs",
+"status": "Lost",
+"location": "Centreville Amusement Park",
+"contact": +1998738475
+}
+]
