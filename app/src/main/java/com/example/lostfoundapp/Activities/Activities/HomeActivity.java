@@ -108,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
         private Context context;
         private static final String TAG = "BrandsAdapter";
 
-        
+
         }
 
         class Holder extends RecyclerView.ViewHolder {

@@ -30,14 +30,6 @@ public class ItemDetails extends AppCompatActivity {
             model = (Item) getIntent().getSerializableExtra("data");
         }
 
-        tvitemID =  findViewById(R.id.getItemID);
-        //imgSat = findViewById(R.id.imgSat);
-        tvitemName.setText(model.getItemName());
-
-        tvDescription = findViewById(R.id.tvDescription);
-        tvStatus.setText(model.getStatus());
-        //tvLaunchDate.setText(modal.getLaunchDateUnix());
-
-        tvLocation = findViewById(R.id.tvLocation);
+       
     }
 }
