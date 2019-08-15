@@ -9,7 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.lostfoundapp.R;
 
 public class ItemDetails extends AppCompatActivity {
-   
+    SharedPreferences preferences;
+    //ImageView imgSat;
+    TextView tvitemID;
+    TextView tvitemName;
+    TextView tvDescription;
+    TextView tvStatus;
+    TextView tvLocation;
 
 
 
