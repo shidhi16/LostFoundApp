@@ -61,7 +61,22 @@ public class HomeActivity extends AppCompatActivity {
         setArrayListOfItems();
     }
 
-    
+    private String readItems(String itemslist) throws IOException {
+        BufferedReader reader = null;
+        reader = new BufferedReader(new InputStreamReader(getAssets().open(itemslist), "UTF-8"));
+
+        String items = "";
+        String line;
+        while ((line = reader.readLine()) != null)
+        {
+            items = items + line;
+        }
+
+        return items;
+
+
+    }
+
     private void setArrayListOfItems() {
 
         try {
