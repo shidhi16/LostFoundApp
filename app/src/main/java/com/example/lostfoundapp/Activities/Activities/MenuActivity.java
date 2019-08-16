@@ -3,6 +3,7 @@ package com.example.lostfoundapp.Activities.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.lostfoundapp.AboutUs;
 import com.example.lostfoundapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -74,13 +75,19 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
         if (id == R.id.action_logout) {
             startActivity(new Intent(MenuActivity.this, LoginForm.class));
 
             return true;
+        }
+        if(id == R.id.about_us)
+        {
+            startActivity(new Intent(MenuActivity.this, AboutUs.class));
+
         }
 
         return super.onOptionsItemSelected(item);
