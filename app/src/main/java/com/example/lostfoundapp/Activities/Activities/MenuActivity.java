@@ -1,5 +1,6 @@
 package com.example.lostfoundapp.Activities.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.lostfoundapp.R;
@@ -74,6 +75,11 @@ public class MenuActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+        if (id == R.id.action_logout) {
+            startActivity(new Intent(MenuActivity.this, LoginForm.class));
+
             return true;
         }
 
