@@ -1,9 +1,12 @@
 package com.example.lostfoundapp.Activities.Activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import com.example.lostfoundapp.AboutUs;
+import com.example.lostfoundapp.Camera;
+import com.example.lostfoundapp.ContactUs;
 import com.example.lostfoundapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -26,6 +29,7 @@ import android.view.Menu;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,8 +112,12 @@ public class MenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_tools) {
 
         } else if (id == R.id.nav_share) {
+            startActivity(new Intent(MenuActivity.this, Camera.class));
+
 
         } else if (id == R.id.nav_send) {
+            startActivity(new Intent(MenuActivity.this, ContactUs.class));
+
 
         }
 
