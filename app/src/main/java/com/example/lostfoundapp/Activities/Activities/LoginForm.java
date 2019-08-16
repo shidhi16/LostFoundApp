@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-//import android.widget.Switch;
+
 
 import com.example.lostfoundapp.Activities.MySharedPref;
 import com.example.lostfoundapp.Activities.pojoUsers.Users;
@@ -33,11 +33,19 @@ public class LoginForm extends AppCompatActivity {
     private EditText edtEmail;
     private EditText edtPassword;
     private Button btnLogin;
+    private Button btnSignup;
 
 
     String userFile;
 
     private ArrayList<com.example.lostfoundapp.Activities.pojoUsers.Users> usersArrayList = new ArrayList<>();
+
+    public LoginForm(Button btnSignup) {
+        this.btnSignup = btnSignup;
+        Intent myIntent = new Intent(LoginForm.this, SignUpForm.class);
+        //myIntent.putExtra("key", value); //Optional parameters
+        LoginForm.this.startActivity(myIntent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +163,6 @@ public class LoginForm extends AppCompatActivity {
         return true;
 
     }
-
 
 }
 
