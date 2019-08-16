@@ -61,22 +61,7 @@ public class HomeActivity extends AppCompatActivity {
         setArrayListOfItems();
     }
 
-    private String readItems(String itemslist) throws IOException {
-        BufferedReader reader = null;
-        reader = new BufferedReader(new InputStreamReader(getAssets().open(itemslist), "UTF-8"));
-
-        String items = "";
-        String line;
-        while ((line = reader.readLine()) != null)
-        {
-            items = items + line;
-        }
-
-        return items;
-
-
-    }
-
+    
     private void setArrayListOfItems() {
 
         try {
@@ -102,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-    public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.Holder> {
+    public  abstract class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.Holder> {
 
         private ArrayList<Item> itemsArrayList;
         private Context context;
