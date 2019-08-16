@@ -1,4 +1,4 @@
-package com.example.lostfoundapp.Activities.Activities;
+/*package com.example.lostfoundapp.Activities.Activities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -162,4 +162,4 @@ public class HomeActivity extends AppCompatActivity {
             return itemsArrayList.size();
         }
     }
-}
+}*/

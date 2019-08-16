@@ -76,7 +76,7 @@ public class LoginForm extends AppCompatActivity {
 
                         MySharedPref.writeString(mActivity,MySharedPref.isLogin,"True");
                         MySharedPref.writeString(mActivity,MySharedPref.emailId,edtEmail.getText().toString());
-                        startActivity(new Intent(mActivity , HomeActivity.class));
+                        startActivity(new Intent(mActivity , MenuActivity.class));
                     }else {
                         Toast.makeText(mActivity,"Wrong Credentials Entered",Toast.LENGTH_SHORT).show();
                     }
