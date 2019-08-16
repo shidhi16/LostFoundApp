@@ -102,15 +102,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-    public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.Holder> {
+    public  abstract class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.Holder> {
 
         private ArrayList<Item> itemsArrayList;
         private Context context;
         private static final String TAG = "BrandsAdapter";
 
-        BrandsAdapter(Context context, ArrayList<Item> itemArrayList) {
-            this.context = context;
-            this.itemsArrayList = itemsArrayList;
+
         }
 
         class Holder extends RecyclerView.ViewHolder {
