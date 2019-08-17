@@ -1,6 +1,5 @@
 package com.example.lostfoundapp.Activities.Activities;
 
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -8,9 +7,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lostfoundapp.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class AddItem extends AppCompatActivity {

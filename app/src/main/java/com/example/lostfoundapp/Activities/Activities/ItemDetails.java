@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.lostfoundapp.Activities.pojoUsers.Items;
+import com.example.lostfoundapp.Activities.pojoUsers.Users;
 import com.example.lostfoundapp.R;
 
 public class ItemDetails extends AppCompatActivity {
@@ -19,7 +21,7 @@ public class ItemDetails extends AppCompatActivity {
 
 
 
-    Item model ;
+    Items model ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,17 @@ public class ItemDetails extends AppCompatActivity {
         setTitle("Details");
 
         if (getIntent().getExtras()!=null){
-            model = (Item) getIntent().getSerializableExtra("data");
+            model = (Items) getIntent().getSerializableExtra("data");
         }
 
-       
+        tvitemID =  findViewById(R.id.tvitemID);
+        //imgSat = findViewById(R.id.imgSat);
+        tvitemName.setText(model.getItemName());
+
+        tvDescription = findViewById(R.id.tvDescription);
+        tvStatus.setText(model.getStatus());
+        //tvLaunchDate.setText(modal.getLaunchDateUnix());
+
+
     }
 }

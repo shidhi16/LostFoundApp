@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="120dp"
+    android:id="@+id/llItem"
+    android:gravity="center"
+    android:padding="5dp">
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
     app:cardElevation="10dp"
     app:cardCornerRadius="5dp"
-    android:layout_margin="5dp"
-    android:id="@+id/cardItem">
+   >
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-    </androidx.appcompat.widget.Toolbar>
     <RelativeLayout
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
         android:orientation= "vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardviewImg"
@@ -32,9 +30,9 @@
             app:cardCornerRadius="5dp">
 
             <ImageView
-                android:id="@+id/img_view"
+                android:id="@+id/imgItem"
                 android:layout_height="match_parent"
-                android:layout_width="match_parent" />
+                android:layout_width="match_parent"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -51,21 +49,39 @@
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:id="@+id/status"
+                android:id="@+id/tvStatus"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="marquee"
                 android:textColor="@color/md_black_1000"
                 android:hint="status"/>
 
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:id="@+id/itemName"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tvItemName"
                 android:textSize="18sp"
-                android:text="Item Name"
-                />
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="Item  Name" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tvDate"
+                android:textSize="18sp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="Item  Name" />
+
+
+
         </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

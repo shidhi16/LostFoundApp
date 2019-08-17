@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import com.example.lostfoundapp.Activities.Utilities.Validation;
@@ -37,15 +38,8 @@ public class LoginForm extends AppCompatActivity {
 
 
     String userFile;
-
     private ArrayList<com.example.lostfoundapp.Activities.pojoUsers.Users> usersArrayList = new ArrayList<>();
 
-    public LoginForm(Button btnSignup) {
-        this.btnSignup = btnSignup;
-        Intent myIntent = new Intent(LoginForm.this, SignUpForm.class);
-        //myIntent.putExtra("key", value); //Optional parameters
-        LoginForm.this.startActivity(myIntent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +99,7 @@ public class LoginForm extends AppCompatActivity {
     public String readUsers(String fileName) throws IOException
     {
         BufferedReader reader = null;
-        reader = new BufferedReader(new InputStreamReader(getAssets().open(fileName), "UTF-8"));
+        reader = new BufferedReader(new InputStreamReader(getAssets().open(fileName), StandardCharsets.UTF_8));
 
         String content = "";
         String line;
@@ -138,9 +132,9 @@ public class LoginForm extends AppCompatActivity {
 
     private void initView() {
 
-        edtEmail = (EditText) findViewById(R.id.edtEmail);
-        edtPassword = (EditText) findViewById(R.id.edtPassword);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtPassword = findViewById(R.id.edtPassword);
+        btnLogin = findViewById(R.id.btnLogin);
     }
 
     private boolean isValid() {

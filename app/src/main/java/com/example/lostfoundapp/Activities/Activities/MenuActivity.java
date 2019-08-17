@@ -1,10 +1,13 @@
 package com.example.lostfoundapp.Activities.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import com.example.lostfoundapp.AboutUs;
+import com.example.lostfoundapp.Activities.adapters.BrandAdapter;
+import com.example.lostfoundapp.Activities.pojoUsers.Items;
 import com.example.lostfoundapp.Camera;
 import com.example.lostfoundapp.ContactUs;
 import com.example.lostfoundapp.R;
@@ -24,20 +27,82 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static Bitmap bitmap;
 
+    Toolbar toolbar;
+    FloatingActionButton fab;
+    DrawerLayout drawer;
+    NavigationView navigationView;
+    ActionBarDrawerToggle toggle;
+    RecyclerView recyclerView;
+
+    BrandAdapter firstAdapter;
+
+    Context context;
+
+
+    String strItems;
+    ArrayList<Items> itemsArrayList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        init();
+
+
+        recyclerView = findViewById(R.id.recyclerView);
+        firstAdapter = new BrandAdapter(context, itemsArrayList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(firstAdapter);
+
+        try {
+            strItems = readItems("itemslist");
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        setArrayListOfItems();
+
+
+
+    }
+
+    private void init() {
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.ftbAdd);
+        recyclerView = findViewById(R.id.recyclerView);
+
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,13 +110,6 @@ public class MenuActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -109,20 +167,53 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-            startActivity(new Intent(MenuActivity.this, Camera.class));
-
-
-        } else if (id == R.id.nav_send) {
-            startActivity(new Intent(MenuActivity.this, ContactUs.class));
-
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    private String readItems(String itemslist) throws IOException {
+        BufferedReader reader = null;
+        reader = new BufferedReader(new InputStreamReader(getAssets().open(itemslist), StandardCharsets.UTF_8));
+
+        String items = "";
+        String line;
+        while ((line = reader.readLine()) != null)
+        {
+            items = items + line;
+        }
+
+        return items;
+
+
+    }
+
+    private void setArrayListOfItems() {
+
+        try {
+            JSONArray itemsArray = new JSONArray(strItems);
+            for (int i = 0; i < itemsArray.length(); i++) {
+                Items item = new Items();
+                JSONObject itemObject = itemsArray.getJSONObject(i);
+
+
+                item.setItemID(itemObject.getInt("itemID"));
+                item.setItemName(itemObject.getString("itemName"));
+                item.setDescription(itemObject.getString("description"));
+                item.setStatus(itemObject.getString("status"));
+                item.setLocation(itemObject.getString("location"));
+                item.setContact(itemObject.getInt("contact"));
+
+                itemsArrayList.add(item);
+                firstAdapter.notifyDataSetChanged();
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
