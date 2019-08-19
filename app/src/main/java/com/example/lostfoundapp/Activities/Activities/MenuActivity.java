@@ -62,7 +62,7 @@ public class MenuActivity extends AppCompatActivity
 
 
         recyclerView = findViewById(R.id.recyclerView);
-        firstAdapter = new BrandAdapter(context, LostFoundSingleton.getInstance().getItemsList());
+        firstAdapter = new BrandAdapter(MenuActivity.this, LostFoundSingleton.getInstance().getItemsList());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(firstAdapter);
@@ -198,7 +198,7 @@ public class MenuActivity extends AppCompatActivity
                 item.setItemName(itemObject.getString("itemName"));
                 item.setDescription(itemObject.getString("description"));
                 item.setStatus(itemObject.getString("status"));
-
+                item.setItemImage(itemObject.getString("itemImage"));
                 item.setContact(String.valueOf(itemObject.getInt("contact")));
 
                 LostFoundSingleton.getInstance().itemsArrayList.add(item);

@@ -65,6 +65,10 @@ public class AddItem extends AppCompatActivity {
         setContentView(R.layout.additem_activity);
         ButterKnife.bind(this);
 
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         try {
             strCities = readCities();
             JSONArray citiesArray = new JSONArray(strCities);
@@ -93,6 +97,17 @@ public class AddItem extends AppCompatActivity {
         }
 
         return content;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        return super.onSupportNavigateUp();
+
+    }
+
+    @Override
+    public boolean onNavigateUp() {
+        return super.onNavigateUp();
     }
 
     @OnClick({R.id.imgItem, R.id.btnPost})

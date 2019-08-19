@@ -11,6 +11,16 @@ public class Items implements Serializable {
     private String address;
     private String city;
 
+    public String getItemImage() {
+        return itemImage;
+    }
+
+    public void setItemImage(String itemImage) {
+        this.itemImage = itemImage;
+    }
+
+    private String itemImage;
+
     public String getAddress() {
         return address;
     }

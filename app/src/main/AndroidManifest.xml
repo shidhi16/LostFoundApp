@@ -4,6 +4,7 @@
     package="com.example.lostfoundapp">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -16,12 +17,12 @@
         <activity android:name=".Camera"></activity>
         <activity android:name=".ContactUs" />
         <activity android:name=".AboutUs" />
-        <activity
-            android:name=".Activities.Activities.MenuActivity"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".Activities.Activities.SplashScreen" >
+        <!--<activity-->
+            <!--android:name=".Activities.Activities.MenuActivity"-->
+            <!--android:label="@string/title_activity_menu"-->
+            <!--android:theme="@style/AppTheme.NoActionBar">-->
+        <!--</activity>-->
+        <activity android:name=".Activities.Activities.MenuActivity" >
 
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -35,6 +36,7 @@
         <activity android:name=".Activities.Activities.ViewListContents" />
 
         <activity android:name=".Activities.Activities.AddItem"/>
+        <activity android:name=".Activities.Activities.ItemDetails"/>
     </application>
 
 </manifest>

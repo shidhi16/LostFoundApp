@@ -1,6 +1,8 @@
 package com.example.lostfoundapp.Activities.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.lostfoundapp.Activities.Activities.ItemDetails;
 import com.example.lostfoundapp.Activities.pojoUsers.Items;
 import com.example.lostfoundapp.Activities.pojoUsers.Users;
 import com.example.lostfoundapp.R;
@@ -19,10 +24,11 @@ import java.util.ArrayList;
 
 public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyViewHolder>  {
 
-    Context context;
+    AppCompatActivity context;
     ArrayList<Items> itemsArrayList;
+    private static final String TAG = "BrandAdapter";
 
-    public BrandAdapter(Context context, ArrayList<Items> itemsArrayList) {
+    public BrandAdapter(AppCompatActivity context, ArrayList<Items> itemsArrayList) {
         this.context = context;
         this.itemsArrayList = itemsArrayList;
     }
@@ -43,6 +49,19 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyViewHolder
         holder.tvItemName.setText(items.getItemName());
         holder.tvStatus.setText(items.getStatus());
         holder.tvDate.setText(String.valueOf(items.getContact()));
+
+        Log.e(TAG, "onBindViewHolder: "+items.getItemImage() );
+
+        Glide.with(context).load(items.getItemImage()).into(holder.imgItem);
+
+        holder.llItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context , ItemDetails.class);
+                intent.putExtra("data",items);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
