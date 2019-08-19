@@ -8,24 +8,23 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="373dp"
-        android:layout_height="161dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="181dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117"
-        app:srcCompat="@drawable/logo"
-        android:background="#000"/>
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="386dp"
-        android:layout_height="467dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="351dp"
+        android:layout_height="430dp"
+        android:layout_marginEnd="28dp"
         android:text="Lost or Found is an Android app for reporting lost, stolen or found items. You can also search for the lost or found items added by others.
 
 It serves as a worldwide online database of stolen, lost, and found items and missing people.
@@ -41,8 +40,8 @@ This app is not limited for lost or found items. It can also be used to report m
         android:id="@+id/rateus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="228dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="120dp"
         android:text="Rate Us"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
