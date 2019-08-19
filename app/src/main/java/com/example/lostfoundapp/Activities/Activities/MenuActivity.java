@@ -4,33 +4,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lostfoundapp.AboutUs;
 import com.example.lostfoundapp.Activities.adapters.BrandAdapter;
 import com.example.lostfoundapp.Activities.pojoUsers.Items;
-import com.example.lostfoundapp.Camera;
-import com.example.lostfoundapp.ContactUs;
+import com.example.lostfoundapp.LostFoundSingleton;
 import com.example.lostfoundapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.view.View;
-
-import androidx.core.view.GravityCompat;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-
-import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.Menu;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,7 +31,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -58,7 +49,9 @@ public class MenuActivity extends AppCompatActivity
 
 
     String strItems;
-    ArrayList<Items> itemsArrayList = new ArrayList<>();
+
+
+    AppCompatActivity activity = MenuActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +62,7 @@ public class MenuActivity extends AppCompatActivity
 
 
         recyclerView = findViewById(R.id.recyclerView);
-        firstAdapter = new BrandAdapter(context, itemsArrayList);
+        firstAdapter = new BrandAdapter(context, LostFoundSingleton.getInstance().getItemsList());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(firstAdapter);
@@ -106,10 +99,16 @@ public class MenuActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(activity,AddItem.class);
+                startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        firstAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -136,11 +135,6 @@ public class MenuActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
         if (id == R.id.action_logout) {
             startActivity(new Intent(MenuActivity.this, LoginForm.class));
 
@@ -153,7 +147,7 @@ public class MenuActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+      }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -204,10 +198,10 @@ public class MenuActivity extends AppCompatActivity
                 item.setItemName(itemObject.getString("itemName"));
                 item.setDescription(itemObject.getString("description"));
                 item.setStatus(itemObject.getString("status"));
-                item.setLocation(itemObject.getString("location"));
-                item.setContact(itemObject.getInt("contact"));
 
-                itemsArrayList.add(item);
+                item.setContact(String.valueOf(itemObject.getInt("contact")));
+
+                LostFoundSingleton.getInstance().itemsArrayList.add(item);
                 firstAdapter.notifyDataSetChanged();
 
             }

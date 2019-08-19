@@ -4,153 +4,113 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/colorPrimaryDark">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Item"
-            android:textStyle="bold"
-            android:textAlignment="gravity"
-            android:textDirection="firstStrongRtl"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="Add Item"
-            android:layout_marginBottom="10dp"
-            android:textSize="50sp"/>
-    </LinearLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.cardview.widget.CardView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        app:cardUseCompatPadding="true"
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:elevation="10dp"
                 app:cardCornerRadius="5dp">
 
                 <ImageView
-                    android:id="@+id/itemImage"
+                    android:id="@+id/imgItem"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/md_black_1000"
+                    android:onClick="onViewClicked"
                     android:scaleType="fitXY" />
 
             </androidx.cardview.widget.CardView>
 
 
-            <TextView
-                android:id="@+id/tvitemName"
+            <EditText
+                android:id="@+id/etItemName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="Item Name"
-                android:textAlignment="center"
-                android:textColor="@color/md_black_1000"
-                android:textSize="20sp" />
+                android:hint="Item Name"
+                android:textColor="@color/md_black_1000" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:orientation="vertical" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Status"/>
-
                 <Spinner
                     android:id="@+id/statusSpinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
                     android:entries="@array/statusList"
                     android:prompt="@string/status_prompt" />
 
             </LinearLayout>
 
 
-            <LinearLayout
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:hint="description"
+                android:paddingStart="3dp"
+                android:paddingEnd="3dp"
+                android:textColor="@color/md_black_1000"
+                android:inputType="textImeMultiLine|textMultiLine"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="contact"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:imeOptions="actionNext"
+                android:paddingStart="3dp"
+                android:paddingEnd="3dp"
+                android:maxLength="12"
+                android:textColor="@color/md_black_1000"
+                android:inputType="phone"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Item ID:"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvitemID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20sp"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddress"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:textColor="@color/md_black_1000"
+                android:layout_height="?attr/actionBarSize"
+                android:hint="Address"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Description:"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvDescription"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20sp"
-
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <AutoCompleteTextView
+                android:id="@+id/etCities"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:textColor="@color/md_black_1000"
+                android:hint="cities"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Contact"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvContact"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20sp"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
 
 
             <Button
@@ -158,10 +118,10 @@
                 android:id="@+id/btnPost"
                 android:layout_height="wrap_content"
                 android:text="POST"
-                android:layout_marginRight="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="200dp"
-                android:layout_marginBottom="15dp"/>
+                android:onClick="onViewClicked"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                />
 
 
 
