@@ -38,10 +38,16 @@
 
                 <ImageView
                     android:id="@+id/imgItem"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="269dp"
+                    android:layout_height="182dp"
                     android:onClick="onViewClicked"
                     android:scaleType="fitXY" />
+
+                <Button
+                    android:id="@+id/btnImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Picture" />
 
             </androidx.cardview.widget.CardView>
 

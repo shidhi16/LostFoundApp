@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lostfoundapp.AboutUs;
 import com.example.lostfoundapp.Activities.adapters.BrandAdapter;
 import com.example.lostfoundapp.Activities.pojoUsers.Items;
+import com.example.lostfoundapp.Camera;
+import com.example.lostfoundapp.ContactUs;
 import com.example.lostfoundapp.LostFoundSingleton;
 import com.example.lostfoundapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -158,8 +160,7 @@ public class MenuActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(MenuActivity.this, ContactUs.class));
 
         }
 
