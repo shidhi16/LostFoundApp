@@ -16,4 +16,5 @@
 |8| ![Screenshot_1566265388](https://user-images.githubusercontent.com/50931344/63387441-5ff41d80-c373-11e9-9f1d-6a5df9cde8f2.png)| Add New Item|
 |9|![Screenshot_1566339915](https://user-images.githubusercontent.com/50931344/63388952-24a81d80-c378-11e9-8d29-15f141622be2.png)
  | Contact Us|
-|10|![Screenshot_1566250601](https://user-images.githubusercontent.com/50931344/63307762-93747080-c2bd-11e9-92c5-f57bee5fe0f7.png)| About Us with Rating|
+|10|![Screenshot_1566341261](https://user-images.githubusercontent.com/50931344/63389907-448d1080-c37b-11e9-9840-38abd33bda61.png)
+| About Us with Rating|
