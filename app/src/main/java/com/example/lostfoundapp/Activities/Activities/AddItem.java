@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -38,7 +39,7 @@ import butterknife.OnClick;
 
 public class AddItem extends AppCompatActivity {
     public static final int CAMERA_REQUEST= 9999;
-    ImageView imageview;
+    private static Bitmap bitmap;
 
     ArrayList<CitiesPojo> citiesPojoArrayList = new ArrayList<>();
 
@@ -69,8 +70,6 @@ public class AddItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.additem_activity);
         ButterKnife.bind(this);
-        imageview = findViewById(R.id.imgItem);
-        imageview.setImageBitmap(MenuActivity.bitmap);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -91,10 +90,14 @@ public class AddItem extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     public void OpenCamera(View view)
     {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        Log.e("Open Camera Started >","Activity Started");
         startActivityForResult(intent,CAMERA_REQUEST);
+        Log.e("Open Camera Ended >","Activity Ended");
 
     }
 
@@ -151,8 +154,8 @@ public class AddItem extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if(requestCode== CAMERA_REQUEST)
         {
-            MenuActivity.bitmap = (Bitmap)data.getExtras().get("data");
-            imageview.setImageBitmap(MenuActivity.bitmap);
+            AddItem.bitmap = (Bitmap)data.getExtras().get("data");
+            imgItem.setImageBitmap(AddItem.bitmap);
         }
     }
 

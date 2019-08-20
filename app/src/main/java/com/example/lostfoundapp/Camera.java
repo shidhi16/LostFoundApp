@@ -21,12 +21,6 @@ public class Camera extends AppCompatActivity {
         imageview = findViewById(R.id.imageView4);
         imageview.setImageBitmap(MenuActivity.bitmap);
     }
-    public void OpenCamera(View view)
-    {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent,CAMERA_REQUEST);
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
