@@ -27,6 +27,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/md_green_50"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -34,20 +35,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
+                android:background="@color/md_green_50"
                 android:elevation="10dp"
                 app:cardCornerRadius="5dp">
 
                 <ImageView
                     android:id="@+id/imgItem"
-                    android:layout_width="269dp"
-                    android:layout_height="182dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/md_green_50"
                     android:onClick="onViewClicked"
                     android:scaleType="fitXY" />
 
                 <Button
                     android:id="@+id/btnImg"
-                    android:layout_width="wrap_content"
+                    android:layout_width="133dp"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
                     android:text="Choose Picture" />
 
             </androidx.cardview.widget.CardView>
@@ -123,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
                 android:onClick="onViewClicked"
                 android:text="POST" />
 
