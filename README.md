@@ -1,6 +1,7 @@
-| sno | ScreenShot  | Desctiption  |
+| sno | ScreenShot  | Description  |
 | :---:   | :-: | :-: |
-| 1 |  ![Screenshot_1566250671](https://user-images.githubusercontent.com/50931344/63307530-b7838200-c2bc-11e9-9886-8661b8b18ef8.png)
+| 1 |  ![Screenshot_1566250671]
+<img src = "(https://user-images.githubusercontent.com/50931344/63307530-b7838200-c2bc-11e9-9886-8661b8b18ef8.png)" width = "200" />
 | Splash Screen |
 |2| ![Screenshot_1566250676](https://user-images.githubusercontent.com/50931344/63307584-e00b7c00-c2bc-11e9-8a80-d4f8302fd153.png)
 |Login Screen |
