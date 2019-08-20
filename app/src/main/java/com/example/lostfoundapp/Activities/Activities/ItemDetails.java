@@ -29,13 +29,11 @@ public class ItemDetails extends AppCompatActivity {
     TextView tvStatus;
     @BindView(R.id.tvItemName)
     TextView tvItemName;
-    @BindView(R.id.tvLocation)
-    TextView tvLocation;
-    @BindView(R.id.tvDescription)
-    TextView tvDescription;
+   // @BindView(R.id.tvLocation)
+    //TextView tvLocation;
     @BindView(R.id.tvContact)
     TextView tvContact;
-    @BindView(R.id.tvDesc)
+    @BindView(R.id.tvDescription)
     TextView tvDesc;
 
     private static final String TAG = "ItemDetails";
@@ -49,6 +47,20 @@ public class ItemDetails extends AppCompatActivity {
 
         if (getIntent().getExtras()!=null){
             items = (Items) getIntent().getSerializableExtra("data");
+
+            tvItemName = findViewById(R.id.tvItemName);
+            tvStatus = findViewById(R.id.tvStatus);
+            tvDesc = findViewById(R.id.tvDescription);
+            tvContact = findViewById(R.id.tvContact);
+      //      tvLocation = findViewById(R.id.tvLocation);
+
+
+            tvItemName.setText(String.valueOf(items.getItemName()));
+            tvStatus.setText(String.valueOf(items.getStatus()));
+            tvDesc.setText(String.valueOf(items.getDescription()));
+            tvContact.setText(String.valueOf(items.getContact()));
+        //    tvLocation.setText(String.valueOf(items.getLocation()));
+
 
             Glide.with(this).load(items.getItemImage()).into(imgSat);
         }
